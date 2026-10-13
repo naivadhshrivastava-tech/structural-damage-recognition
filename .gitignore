@@ -1,0 +1,33 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environments
+.venv/
+venv/
+
+# Original dataset
+DATASET/
+
+# Prepared datasets
+data/
+data_small/
+*.npy
+
+# ZIP archives
+*.zip
+
+# Model checkpoints
+*.pt
+*.pth
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary dataset inspection scripts
+inspect_dataset.py
+visualize_dataset.py
