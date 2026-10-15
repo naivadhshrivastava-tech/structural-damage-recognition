@@ -31,12 +31,7 @@ import json
 import time
 from pathlib import Path
 
-import matplotlib
-matplotlib.use("Agg")
-
-import matplotlib.pyplot as plt
 import numpy as np
-import seaborn as sns
 
 import torch
 import torch.nn as nn
@@ -1182,6 +1177,11 @@ def main():
     # ========================================================
     # CONFUSION MATRIX PLOT
     # ========================================================
+
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    import seaborn as sns
 
     plt.figure(
         figsize=(5, 4)

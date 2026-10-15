@@ -31,3 +31,8 @@ Thumbs.db
 # Temporary dataset inspection scripts
 inspect_dataset.py
 visualize_dataset.py
+
+# Pytest & testing
+.pytest_cache/
+.coverage
+

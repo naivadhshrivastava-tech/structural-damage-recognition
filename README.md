@@ -353,7 +353,31 @@ The script automatically uses CUDA when a compatible GPU is available and otherw
 
 ---
 
-## 9. Demo Results
+## 9. Interactive Web Application
+
+A Gradio web interface is provided in `app.py` for user-friendly drag-and-drop structural damage classification.
+
+### Running the Web App
+
+```bash
+python app.py
+```
+
+The script will automatically verify or download the trained model checkpoint and launch a local web server (with public sharing capability) allowing you to upload images and inspect prediction confidences in real-time.
+
+---
+
+## 10. Running Tests
+
+The test suite validates model construction, input tensor transformation shapes, and inference integrity without requiring the full PEER dataset.
+
+```bash
+python -m pytest tests/ -v
+```
+
+---
+
+## 11. Demo Results
 
 The final inference pipeline was tested successfully using examples from the test set.
 
@@ -460,7 +484,7 @@ This example demonstrates that visually difficult images can produce uncertain p
 
 ---
 
-## 10. Project Structure
+## 12. Project Structure
 
 ```text
 structural-damage-recognition/
@@ -485,6 +509,10 @@ structural-damage-recognition/
 │   ├── train.py
 │   └── predict.py
 │
+├── tests/
+│   └── test_pipeline.py
+│
+├── app.py
 ├── .gitignore
 ├── README.md
 └── requirements.txt
@@ -494,7 +522,7 @@ structural-damage-recognition/
 
 ---
 
-## 11. Installation
+## 13. Installation
 
 Clone the repository:
 
@@ -527,7 +555,7 @@ pip install -r requirements.txt
 
 ---
 
-## 12. Dataset Setup
+## 14. Dataset Setup
 
 The large dataset files are not included in the GitHub repository.
 
@@ -582,7 +610,7 @@ to prevent accidental upload of NumPy dataset files.
 
 ---
 
-## 13. Training
+## 15. Training
 
 After preparing the dataset, training can be started using:
 
@@ -615,7 +643,7 @@ The best validation checkpoint is saved during training.
 
 ---
 
-## 14. Trained Model Checkpoint
+## 16. Trained Model Checkpoint
 
 The final EfficientNet-B0 checkpoint is:
 
@@ -634,7 +662,7 @@ For the project demonstration, the trained checkpoint is kept locally.
 
 ---
 
-## 15. Requirements
+## 17. Requirements
 
 The main dependencies are:
 
@@ -661,7 +689,7 @@ The exact CUDA build may depend on the environment.
 
 ---
 
-## 16. Reproducibility
+## 18. Reproducibility
 
 A fixed random seed of:
 
@@ -684,7 +712,7 @@ The best checkpoint was selected based on validation accuracy rather than test a
 
 ---
 
-## 17. Limitations
+## 19. Limitations
 
 The current project has several limitations:
 
@@ -701,7 +729,7 @@ Therefore, the system should be considered a **deep learning-based structural da
 
 ---
 
-## 18. Conclusion
+## 20. Conclusion
 
 This project developed a deep learning-based system for binary structural damage recognition from images.
 
@@ -731,7 +759,7 @@ The project demonstrates the practical use of transfer learning for automated st
 
 ---
 
-## 19. GitHub Notes
+## 21. GitHub Notes
 
 Large datasets and trained model checkpoints are intentionally excluded from the repository.
 
@@ -753,7 +781,7 @@ The repository therefore contains the source code, configuration files, document
 
 ---
 
-## 20. Final Project Summary
+## 22. Final Project Summary
 
 ```text
 Task:

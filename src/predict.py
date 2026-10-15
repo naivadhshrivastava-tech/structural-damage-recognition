@@ -13,8 +13,20 @@ CLASS_NAMES = {
 }
 
 
-def load_model(model_path, device):
+from typing import Tuple, Union
 
+
+def load_model(model_path: Union[str, Path], device: torch.device) -> nn.Module:
+    """
+    Load a trained EfficientNet-B0 model checkpoint for inference.
+
+    Args:
+        model_path: Path to the saved PyTorch model checkpoint (.pt/.pth).
+        device: Device to place the model on (e.g., 'cuda' or 'cpu').
+
+    Returns:
+        The loaded and evaluated PyTorch model.
+    """
     model = models.efficientnet_b0(weights=None)
 
     model.classifier[1] = nn.Linear(
@@ -38,7 +50,22 @@ def load_model(model_path, device):
     return model
 
 
-def predict(model, image_path, device):
+def predict(
+    model: nn.Module,
+    image_path: Union[str, Path],
+    device: torch.device
+) -> Tuple[str, float]:
+    """
+    Run damage prediction on a single input image.
+
+    Args:
+        model: Trained PyTorch classification model.
+        image_path: Path to the input image file.
+        device: Device used for inference.
+
+    Returns:
+        Tuple of (predicted_class_name, confidence_score).
+    """
 
     transform = transforms.Compose([
         transforms.Resize((224, 224)),
